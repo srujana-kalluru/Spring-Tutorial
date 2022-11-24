@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+@Component//("StudentDaoImpl")
 public class StudentDaoImpl implements StudentDao {
 
     private Map<Long, Student> students;
