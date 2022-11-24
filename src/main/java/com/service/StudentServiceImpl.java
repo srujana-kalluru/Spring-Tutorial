@@ -4,14 +4,14 @@ import com.core.Student;
 import com.dao.StudentDao;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.Collection;
 
 @Getter
 @Setter
-@Named("studentServiceImpl, studentServiceEnhancedImpl, studentServiceSuperEnhancedImpl")
+@Component("studentServiceImpl, studentServiceEnhancedImpl, studentServiceSuperEnhancedImpl")
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao studentDao;
@@ -22,7 +22,7 @@ public class StudentServiceImpl implements StudentService {
     public StudentServiceImpl() {
     }
 
-    @Inject
+    @Autowired
     public StudentServiceImpl(StudentDao studentDao) {
         this.studentDao = studentDao;
     }
