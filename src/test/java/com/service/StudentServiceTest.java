@@ -2,13 +2,17 @@ package com.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@SpringBootTest
 public class StudentServiceTest {
 
-    private ClassPathXmlApplicationContext context;
+    @Autowired
+    private ApplicationContext context;
     private StudentService studentService;
     private StudentService studentServiceEnhanced;
     private StudentService studentServiceSuperEnhanced;
@@ -18,7 +22,6 @@ public class StudentServiceTest {
 
     @BeforeEach
     void setUp() {
-        context = new ClassPathXmlApplicationContext("beans.xml");
         studentService = context.getBean("studentServiceImpl", StudentService.class);
         studentServiceEnhanced = context.getBean("studentServiceEnhancedImpl", StudentService.class);
         studentServiceSuperEnhanced = context.getBean("studentServiceSuperEnhancedImpl", StudentService.class);
