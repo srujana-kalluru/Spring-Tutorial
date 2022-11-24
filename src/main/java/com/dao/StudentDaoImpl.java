@@ -2,10 +2,12 @@ package com.dao;
 
 import com.core.Student;
 
+import javax.inject.Named;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+@Named//("studentDaoImpl")
 public class StudentDaoImpl implements StudentDao {
 
     private Map<Long, Student> students;
