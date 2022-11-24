@@ -11,7 +11,7 @@ import java.util.Collection;
 
 @Getter
 @Setter
-@Named("studentServiceImpl, studentServiceEnhancedImpl, studentServiceSuperEnhancedImpl")
+@Named
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao studentDao;
