@@ -11,7 +11,7 @@ import java.util.Collection;
 
 @Getter
 @Setter
-@Component("studentServiceImpl, studentServiceEnhancedImpl, studentServiceSuperEnhancedImpl")
+@Component
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao studentDao;
