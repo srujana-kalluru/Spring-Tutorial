@@ -1,13 +1,13 @@
 package com.dao;
 
 import com.core.Student;
+import org.springframework.stereotype.Component;
 
-import javax.inject.Named;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@Named//("studentDaoImpl")
+@Component//("studentDaoImpl")
 public class StudentDaoImpl implements StudentDao {
 
     private Map<Long, Student> students;
