@@ -5,10 +5,13 @@ import com.dao.StudentDao;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.Collection;
 
 @Getter
 @Setter
+@Named("studentServiceImpl, studentServiceEnhancedImpl, studentServiceSuperEnhancedImpl")
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao studentDao;
@@ -17,6 +20,11 @@ public class StudentServiceImpl implements StudentService {
     private int num2;
 
     public StudentServiceImpl() {
+    }
+
+    @Inject
+    public StudentServiceImpl(StudentDao studentDao) {
+        this.studentDao = studentDao;
     }
 
     public StudentServiceImpl(StudentDao studentDao, boolean mode) {
