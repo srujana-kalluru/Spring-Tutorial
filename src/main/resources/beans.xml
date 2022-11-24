@@ -5,10 +5,8 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config/>
-    <bean id="studentService" name="studentServiceImpl" class="com.service.StudentServiceImpl"/>
+    <context:component-scan base-package="com" />
     <bean id="studentServiceEnhanced" name="studentServiceEnhancedImpl" class="com.service.StudentServiceImpl"/>
     <bean id="studentServiceSuperEnhanced" name="studentServiceSuperEnhancedImpl"
           class="com.service.StudentServiceImpl"/>
-    <bean id="studentDao" name="studentDaoImpl" class="com.dao.StudentDaoImpl"/>
 </beans>
