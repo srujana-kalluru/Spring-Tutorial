@@ -12,4 +12,6 @@ public interface StudentService {
     Collection<Student> getAllStudents();
 
     StudentDao getStudentDao();
+
+    void setStudentDao(StudentDao studentDao);
 }
