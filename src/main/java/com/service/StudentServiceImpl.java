@@ -12,6 +12,24 @@ import java.util.Collection;
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao studentDao;
+    private boolean mode;
+    private int num1;
+    private int num2;
+
+    public StudentServiceImpl() {
+    }
+
+    public StudentServiceImpl(StudentDao studentDao, boolean mode) {
+        this.studentDao = studentDao;
+        this.mode = mode;
+    }
+
+    public StudentServiceImpl(StudentDao studentDao, boolean mode, int num1, int num2) {
+        this.studentDao = studentDao;
+        this.mode = mode;
+        this.num1 = num1;
+        this.num2 = num2;
+    }
 
     @Override
     public Student get(long id) {

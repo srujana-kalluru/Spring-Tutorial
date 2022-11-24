@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="studentService" name="studentServiceImpl" class="com.service.StudentServiceImpl">
+        <property name="mode" value="true"/> <!-- Setter injection-->
+        <property name="studentDao" ref="studentDaoImpl"/> <!-- Setter injection-->
+    </bean>
+    <bean id="studentServiceEnhanced" name="studentServiceEnhancedImpl" class="com.service.StudentServiceImpl">
+        <constructor-arg value="false"/> <!-- Constructor injection-->
+        <constructor-arg ref="studentDaoImpl"/> <!-- Constructor injection-->
+        <constructor-arg name="num2" type="int" value="2"/> <!-- Constructor injection-->
+        <constructor-arg name="num1" type="int" value="1"/> <!-- Constructor injection-->
+    </bean>
+    <bean id="studentServiceSuperEnhanced" name="studentServiceSuperEnhancedImpl"
+          class="com.service.StudentServiceImpl">
+        <constructor-arg value="false" index="1"/> <!-- Constructor injection-->
+        <constructor-arg ref="studentDaoImpl" index="0"/> <!-- Constructor injection-->
+        <property name="num2" value="2"/> <!-- Setter injection-->
+        <property name="num1" value="1"/> <!-- Setter injection-->
+    </bean>
+    <bean id="studentDao" name="studentDaoImpl" class="com.dao.StudentDaoImpl"/>
+</beans>
